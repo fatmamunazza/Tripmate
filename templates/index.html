@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>TripMate</title>
+    <style>
+        body,html{
+            margin:0;
+            padding:0;
+            height:100%;
+        	background:linear-gradient(to bottom right, #33ccff 0%, #1b0e5c 100%);
+        }
+        p{
+        color:#fff;
+        text-align:center;
+        font-size:30px;
+        padding-top:250px;
+        font-style:italic;
+        font-weight:bold;
+        }
+        img{
+        height:30px;
+        width:50px;
+        bottom:0px;
+        right:0px;
+        padding:20px 30px;
+        position:fixed;
+        }
+    </style>
+</head>
+<body>
+<p id="demo">WELCOME TO TRIPMATE<br>YOUR TRAVEL COMPANION</p>
+<a href="tripMateForm">
+    <img src="{% static 'img/right_img.png' %}">
+</a>
+<script>
+setTimeout(function() {
+window.location.href='tripMateForm';
+},8000);
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <title>SIH</title>
+</head>
+<body>
+<form action='/check' method='post'> {% csrf_token %}
+    {% load i18n %}
+            <div class="citySelection">
+
+                <p>Select Language</p>
+
+                   <select id="language" name="language" size="1">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                   </select><br>
+             <!--  <input type=text" id="country"/>-->
+			    <p>Select Country</p>
+			       <select  size="1" name="country">
+                        <option value="India">{% trans "India" %}</option>
+                   </select>
+
+                <p>Select State</p>
+			        <select id="state" name="state" size="1">
+                        <option value="Bihar">Bihar</option>
+                   </select>
+
+			    <p>Select City</p>
+                    <select id="city" name="city" size="1">
+                        <option value="Patna">Patna</option>
+                   </select>
+                 <br>
+			     <input type="submit" value="NEXT">
+            </div>
+</form>
+</body>
+</html>
