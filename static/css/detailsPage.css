@@ -1,0 +1,323 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html{
+	padding:0;
+	margin:0;
+	height:100%;
+	background:linear-gradient(to right bottom, rgb(134, 223, 221) 0%, rgb(9, 101, 223) 100%);
+	box-sizing: border-box;
+}
+
+/************************MOBILE VIEW FIRST******************************/
+
+.navBar{
+	height: 12vh;
+	background-color: rgba(255,255,255,0.2);
+	box-shadow: 0vw 0vw 2vw 0vw #00000011;
+}
+
+.containerBox{
+	margin-top: 4vh;
+	width: 90vw;
+	height: 80vh;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 2vw;
+	box-shadow: 0vw 0vw 1.5vw 0vw #00000036;
+	overflow-y: scroll;
+	overflow-x:hidden;
+}
+
+.tableHeader{
+	text-align: center;
+	color: #fff;
+	font-size: 3vw;
+	width: 100%;
+	height: 15vh;
+	background:linear-gradient(to right bottom, rgb(134, 223, 221) 0%, rgb(9, 101, 223) 100%);
+	font-family: 'Montserrat', sans-serif;
+	padding-top:2vh;
+}
+
+.placeHeader{
+	color:#fff;
+	float: left;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding-left: 2vh;
+}
+
+.nameLabel{
+    margin-top: auto;
+	text-align: left;
+    line-height:1vh;
+}
+
+.openCloseInfo{
+    font-size: 2vh;
+	text-align: left;
+	margin-bottom: auto;
+}
+
+.addressLabel{
+    font-size: 1.8vh;
+	text-align: left;
+	margin-bottom: auto;
+}
+
+.rightHeaderBlock{
+	float: right;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	padding-right: 5vw;
+}
+
+.rightHeaderBlock img{
+	margin-top: 3vh;
+	margin-bottom: 0.8vh;
+	height: 6vh;
+}
+
+.categoryElement{
+	width: 100%;
+	height: 9vh;
+	background-color: white;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #333333;
+	font-size: 3vw;
+	border-bottom: 3px solid;
+	border-color: #EEE;
+}
+.labelsLeft{
+	float: left;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding-left: 2vh;
+
+}
+
+.nameLabel{
+	margin-top: auto;
+	font-size: 2.2vh;
+	margin-bottom: 1vh;
+	text-align: left;
+}
+
+.secondaryLabel{
+	font-size: 1.4vh;
+	text-align: left;
+	margin-bottom: auto;
+}
+.congestionBlock{
+	float: right;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 8vh;
+}
+
+.congestionIcon{
+	margin-top: auto;
+	margin-bottom: 0.8vh;
+	height: 3.6vh;
+}
+
+.congestionLabel{
+	font-size: 1.2vh;
+	margin-top: 0vh;
+	margin-bottom: auto;
+
+}
+
+.labelLeft{
+	float: left;
+	height: 100%;
+	display:flex;
+	align-items:center;
+	padding-left: 2vh;
+	font-size:2.2vh;
+}
+
+
+.rightBlock{
+	float: right;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+
+.firstBlock{
+	float: left;
+	height: 100%;
+	width: 8vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.label{
+	margin-top: auto;
+	font-size: 3vh;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.safetyLabel{
+    margin-top: auto;
+    margin-bottom:auto;
+	font-size: 3vh;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.lowerLabel{
+	font-size: 1.5vh;
+	margin-bottom: auto;
+}
+
+.secondBlock{
+	float: right;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 8vh;
+}
+
+.icon{
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 4vh;
+}
+
+.categoryDescription{
+	width: 100%;
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
+	color: #333333;
+	padding-left: 2vh;
+	padding-top:2vh;
+}
+
+.categoryLabel{
+	margin-top: auto;
+	font-size: 2.2vh;
+	margin-bottom: 1vh;
+	text-align: left;
+
+}
+
+.description{
+	font-size: 1.5vh;
+	text-align: left;
+	padding-right:2vw;
+	margin-bottom: auto;
+}
+
+/************************DESKTOP VIEW*****************************/
+@media only screen and (min-width: 640px) {
+	.containerBox{
+		margin-top: 6vh;
+		width: 74vw;
+		height: 76vh;
+		border-radius: 0.5vw;
+		box-shadow: 0vw 0vw 1.5vw 0vw #00000036;
+	}
+
+	.categoryElement{
+		height: 12vh;
+		font-size: 3vw;
+	}
+
+	.labelsLeft{
+		padding-left: 5vh;
+	}
+
+	.nameLabel{
+		font-size: 3vh;
+	}
+
+	.secondaryLabel{
+		font-size: 2vh;
+	}
+
+	.congestionBlock{
+		width: 12vh;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+
+	.congestionIcon{
+		height: 4.8vh;
+	}
+
+	.congestionLabel{
+		font-size: 2vh;
+	}
+	.labelLeft{
+	    padding-left:5vh;
+	    font-size:3vh;
+	}
+	.categoryDescription{
+	    padding-left:5vh;
+	}
+	.categoryLabel{
+	    font-size:3vh;
+	}
+	.description{
+	    font-size:1.8vh;
+	}
+	.icon{
+	    height:5vh;
+	}
+	.label{
+	    font-size:3.7vh;
+	}
+	.lowerLabel{
+	    font-size:2vh;
+	}
+	.safetyLabel{
+	    font-size:3.7vh;
+	}
+
+	.rightHeaderBlock img{
+        height: 10vh;
+        margin-top:0.8vh;
+    }
+
+}
+
+/************************SCROLL BAR******************************/
+.containerBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.containerBox::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.00);
+}
+
+.containerBox::-webkit-scrollbar-thumb {
+	background: #afafaf;
+	border-radius: 5px;
+}
+
+.containerBox::-webkit-scrollbar-thumb:hover {
+	background: #505050;
+}
+
+.containerBox::-webkit-scrollbar-corner {
+	background: rgba(0, 0, 0, 0.00);
+}

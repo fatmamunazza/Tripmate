@@ -9,4 +9,21 @@ def index(request):
 def tripmateform(request):
     return render(request, 'form.html')
 
+def check(request):
+       language = request.POST.get('language', 'default')
+
+       if language == "Hindi":
+           translation.activate('hi')
+       else:
+           translation.activate('en-us')
+
+       return render(request, 'publicPlaceList.html')
+
+def selectedList(request):
+    return render(request, 'selectedList.html')
+
+def detailsPage(request):
+    return render(request, 'detailsPage.html')
+
+
 
