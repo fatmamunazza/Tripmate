@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-14 21:04+0530\n"
+"POT-Creation-Date: 2020-04-11 18:40+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\PublicPlaceInfo\templates\publicPlaceList.html:8
-msgid "TripMate:Your Travel Companion"
-msgstr " हिंदी"
+#: .\TripMate\settings.py:111
+msgid "Hindi"
+msgstr "हिंदी"
 
 #: .\TripMate\settings.py:112
-msgid "Hindi"
-msgstr ""
-
-#: .\TripMate\settings.py:113
 msgid "English"
-msgstr ""
+msgstr "English"
 
-#: .\templates\form.html:24
+#: .\templates\form.html:27
 msgid "India"
 msgstr ""
+
+#: .\templates\publicPlaceList.html
+msgid "PARK"
+msgstr "park"
