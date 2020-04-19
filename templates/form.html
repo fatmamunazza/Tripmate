@@ -28,17 +28,42 @@
                    </select>
 
                 <p>Select State</p>
-			        <select id="state" name="state" size="1">
-                        <option value="Bihar">Bihar</option>
+			        <select onchange="checkCity(this.options[this.selectedIndex].value)" method="get" id="state" name="state" size="1">
+                        {% for s in state1 %}
+                        <option value="{{ s.id }}">{{ s.name }}</option>
+                        {% endfor %}
                    </select>
 
 			    <p>Select City</p>
                     <select id="city" name="city" size="1">
-                        <option value="Patna">Patna</option>
+
                    </select>
                  <br>
+                <h1 id="demo"></h1>
+                <h1 id="demo1"></h1>
+                <h1 id="demo2"></h1>
 			     <input type="submit" value="NEXT">
             </div>
 </form>
+<script>
+    function checkCity(selectValue){
+        var cities={{ cities|safe }} ;
+
+        var selectCity=document.getElementById("city");
+        for(var k=0;k <selectCity.length;k++){
+            selectCity.remove(k);
+        }
+
+        var i=0;
+        for (var j = 0; j < cities.length ; j++){
+            var htmlcontent = cities[j].fields.stateCity;
+            if(htmlcontent==selectValue){
+                 selectCity.options[i]=new Option(cities[j].fields.city,cities[j].fields.city);
+                 i++;
+            }
+         }
+    }
+</script>
+
 </body>
 </html>
