@@ -8,44 +8,65 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
-    <title>SIH</title>
+    <title>Select Location - TripMate</title>
+    <link rel="icon" href="{% static 'img/tripmate-logo.png' %}" type="image/x-icon">
+
 </head>
-<body>
-<form action='/check' method='post'> {% csrf_token %}
-    {% load i18n %}
-            <div class="citySelection">
+<body onload="getSelectedValue()">
+ <div class="navBar">
+        <div class="logoBlock">
+            <img class="logoIcon" src="{% static 'img/tripmate-logo.png' %}">
+            <div class="tripmateName">TripMate</div>
+        </div>
+        <div class="sidenav">
+            <div class="closebtn"><a href="javascript:void(0)" onclick="closeNav()">&#10005;</a></div>
+            <a href="form.html" class="dropDownElement">Location Menu</a>
+            <a href="#" class="dropDownElement">About</a>
+            <a href="#" class="dropDownElement">FAQs</a>
+            <a href="#" class="dropDownElement">Contact Us</a>
+        </div>
+        <div class="navSlideMenu" onclick="openNav()">
+            &#9776;
+        </div>
+ </div>
+ <div class="containerBox">
+    <form action='/check' method='post'  class="citySelection"> {% csrf_token %}
+        {% load i18n %}
 
-                <p>Select Language</p>
 
-                   <select id="language" name="language" size="1">
-                        <option value="English">English</option>
-                        <option value="Hindi">Hindi</option>
-                   </select><br>
-             <!--  <input type=text" id="country"/>-->
-			    <p>Select Country</p>
-			       <select  size="1" name="country">
-                        <option value="India">{% trans "India" %}</option>
-                   </select>
+        <p>Select Language</p>
 
-                <p>Select State</p>
-			        <select onchange="checkCity(this.options[this.selectedIndex].value)" method="get" id="state" name="state" size="1">
-                        {% for s in state1 %}
-                        <option value="{{ s.id }}">{{ s.name }}</option>
-                        {% endfor %}
-                   </select>
+           <select id="language" name="language" size="1">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+           </select><br>
+        <p>Select Country</p>
+           <select  size="1" name="country">
+                <option value="India">{% trans "India" %}</option>
+           </select>
 
-			    <p>Select City</p>
-                    <select id="city" name="city" size="1">
+        <p>Select State</p>
+            <select onchange="checkCity(this.options[this.selectedIndex].value)" method="get" id="state" name="state" size="1">
+                {% for s in state1 %}
+                <option value="{{ s.id }}">{{ s.name }}</option>
+                {% endfor %}
+           </select>
 
-                   </select>
-                 <br>
-                <h1 id="demo"></h1>
-                <h1 id="demo1"></h1>
-                <h1 id="demo2"></h1>
-			     <input type="submit" value="NEXT">
-            </div>
-</form>
+        <p>Select City</p>
+            <select id="city" name="city" size="1">
+           </select>
+         <br>
+         <input type="submit" value="NEXT">
+    </form>
+ </div>
 <script>
+
+    function getSelectedValue(){
+       var e=document.getElementById("state");
+       var result=e.options[e.selectedIndex].value;
+       checkCity(result);
+    }
+
     function checkCity(selectValue){
         var cities={{ cities|safe }} ;
 
@@ -58,10 +79,11 @@
         for (var j = 0; j < cities.length ; j++){
             var htmlcontent = cities[j].fields.stateCity;
             if(htmlcontent==selectValue){
-                 selectCity.options[i]=new Option(cities[j].fields.city,cities[j].fields.city);
+                 selectCity.options[i]=new Option(cities[j].fields.city,cities[j].pk);
                  i++;
             }
          }
+
     }
 </script>
 
