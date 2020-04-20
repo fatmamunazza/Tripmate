@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html{
+	height:100%;
+	background:linear-gradient(to right bottom, rgb(134, 223, 221) 0%, rgb(9, 101, 223) 100%);
+	box-sizing: border-box;
+    background-attachment: fixed;
+    font-family: 'Baloo 2', cursive;
+}
+
+/*MOBILE VIEW FIRST*/
+
+.logoIcon{
+    height: 24vw;
+}
+
+.logoBlock{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+}
+
+.centerBlock{
+    height: 40vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.tripmate{
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 8vw;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+}
+
+.tagline{
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5vw;
+    color: #FFFFFF;
+}
+
+.goToNextPage{
+    margin-top: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nextIcon {
+    height: 8vh;
+    -webkit-filter: drop-shadow(0px 0px 0px #00000036);
+  	filter: drop-shadow(0px 0px 0px #00000036);
+}
+
+.nextIcon:Hover{
+    -webkit-filter: drop-shadow(0px 0px 6px #00000020);
+  	filter: drop-shadow(0px 0px 6px #00000020);
+}
+
+@media only screen and (min-width: 640px) {
+    .logoIcon{
+        height: 20vh;
+    }
+    
+    .tripmate{
+        font-size: 8vh;
+    }
+    
+    .tagline{
+        margin-top: 0vh;
+        font-size: 3.6vh;
+    }
+
+
+}

@@ -1,0 +1,241 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html{
+	height:100%;
+	background:white;
+	box-sizing: border-box;
+	background-attachment: fixed;
+}
+
+/**********ALL NAVBAR CSS**************************************/
+
+.navBar{
+	height: 12vh;
+	background-color: rgba(255,255,255,0.2);
+	box-shadow: 0vw 0vw 2vw 0vw #00000030;
+	position: absolute;
+	top: 0vh;
+	left: 0vw;
+	width: 100vw;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.logoBlock{
+	float: left;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+	padding-left: 2vh;
+}
+
+.logoIcon{
+	height: 6vh;
+}
+
+.tripmateName{
+	padding-left: 1vh;
+	font-family: 'Oswald', sans-serif;
+	font-size: 3.2vh;
+	color: #666666;
+}
+
+.navSlideMenu{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 2vh;
+	height: 100%;
+	font-size: 4vh;
+	float:right;
+	color: #333333;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #FFFFFFEE;
+	overflow-x: hidden;
+	transition: 0.5s;
+	border-left: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+  }
+  
+.dropDownElement {
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
+	padding-left: 4vh;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 2.4vh;
+	color: #333333;
+	display: block;
+  }
+  
+.dropDownElement:hover {
+	background-color: #f8f8f8;
+	border: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+  }
+  
+.closebtn {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	padding-right: 2vh;
+	height: 12vh;
+  }
+
+  .closebtn a{
+	font-size: 4vh;
+	float:right;
+	color: #333333;
+	text-decoration: none;
+
+  }
+
+@media only screen and (min-width: 640px) {
+
+	.navBar{
+		position: relative;
+		box-shadow: 0vw 0vw 2vw 0vw #00000010;
+	}
+
+	.logoBlock{
+		padding-left: 4vh;
+	}
+
+	
+	.navSlideMenu{
+
+		padding-right: 4vh;
+
+	}
+
+	.sideNav{
+		width: 0;
+	}
+
+	.closebtn{
+		padding-right: 4vh;
+	}
+}
+
+
+
+/************************MOBILE VIEW FIRST******************************/
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+  }
+
+  .containerBox{
+	box-sizing: border-box;
+    padding-bottom: 6vw;
+	margin-top: 13vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.categoryBox{
+    width: 38vw;
+    height: 38vw;
+    background-color: #fff;
+    margin-top: 7vw;
+    margin-left: 8vw;
+    border-radius: 2vw;
+    box-shadow: 1vw 1vw 1.5vw 0vw #00000010;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    font-size: 3vw;
+}
+
+.categoryBox:Hover{
+	box-shadow: inset 1vw 1vw 1.5vw 0vw #00000010;
+}
+
+.categoryIcon{
+	width: 50%;
+	height: 50%;
+	margin-top: 15%;
+	margin-bottom: 10%;
+	-webkit-filter: drop-shadow(0px 0px 6px #00000036);
+  	filter: drop-shadow(0px 0px 6px #00000036);
+
+}
+
+/************************DESKTOP VIEW******************************/
+@media only screen and (min-width: 640px) {
+
+	.containerBox{
+		padding-bottom: 2vw;
+		margin-top: 6vh;
+		width: calc(4*16vw + 5*2vw);
+		margin-left: auto;
+		margin-right: auto;
+		height: 76vh;
+		overflow-y: scroll;
+		border-radius: 0.5vw;
+		box-shadow: 0vw 0vw 1.5vw 0vw #00000010;
+	}
+
+	.categoryBox:Hover{
+		box-shadow: inset 0vw 0vw 1.5vw 0vw #00000010;
+	}
+	
+	.categoryBox{
+		width: 16vw;
+		height: 16vw;
+		margin-top: 2vw;
+		margin-left: 2vw;
+		border-radius: 1vw;
+		box-shadow: .3vw .3vw 1vw 0vw #00000010;
+		font-size: 1.2vw;
+	}
+  }
+
+/************************SCROLL BAR******************************/
+.containerBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.containerBox::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.00);
+}
+
+.containerBox::-webkit-scrollbar-thumb {
+	background: #EEEEEE;
+	border-radius: 5px;
+}
+
+.containerBox::-webkit-scrollbar-thumb:hover {
+	background: #505050;
+}
+
+.containerBox::-webkit-scrollbar-corner {
+	background: rgba(0, 0, 0, 0.00);
+}

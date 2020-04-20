@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 18:40+0530\n"
+"POT-Creation-Date: 2020-04-20 13:46+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\TripMate\settings.py:111
+#: .\TripMate\settings.py:113
 msgid "Hindi"
 msgstr "हिंदी"
 
-#: .\TripMate\settings.py:112
+#: .\TripMate\settings.py:114
 msgid "English"
 msgstr "English"
 
-#: .\templates\form.html:27
+#: .\templates\detailsPage.html:12
+msgid "Details Page - TripMate"
+msgstr "सार्वजनिक स्थान का विवरण - ट्रीपमेट"
+
+#: .\templates\detailsPage.html:20 .\templates\publicPlaceList.html:20
+#: .\templates\selectedList.html:21
+msgid "TripMate"
+msgstr "ट्रीपमेट"
+
+#: .\templates\form.html:45
 msgid "India"
 msgstr ""
 
-#: .\templates\publicPlaceList.html
+#: .\templates\publicPlaceList.html:12
+msgid "Select Category - TripMate"
+msgstr "सार्वजनिक स्थान का चयन  - ट्रीपमेट"
+
+#: .\templates\publicPlaceList.html:44
 msgid "PARK"
-msgstr "park"
+msgstr "पार्क"
+
+#: .\templates\selectedList.html:15
+msgid "Venue List - TripMate"
+msgstr "वेन्यू लिस्ट - ट्रीपमेट"

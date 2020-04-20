@@ -1,0 +1,423 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html{
+	height:100%;
+	background:white;
+	box-sizing: border-box;
+	background-attachment: fixed;
+}
+
+/**********ALL NAVBAR CSS**************************************/
+
+.navBar{
+	height: 12vh;
+	background-color: rgba(255,255,255,0.2);
+	box-shadow: 0vw 0vw 2vw 0vw #00000030;
+	position: absolute;
+	top: 0vh;
+	left: 0vw;
+	width: 100vw;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.logoBlock{
+	float: left;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+	padding-left: 2vh;
+}
+
+.logoIcon{
+	height: 6vh;
+}
+
+.tripmateName{
+	padding-left: 1vh;
+	font-family: 'Oswald', sans-serif;
+	font-size: 3.2vh;
+	color: #666666;
+}
+
+.navSlideMenu{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 2vh;
+	height: 100%;
+	font-size: 4vh;
+	float:right;
+	color: #333333;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #FFFFFFEE;
+	overflow-x: hidden;
+	transition: 0.5s;
+	border-left: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+  }
+  
+.dropDownElement {
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
+	padding-left: 4vh;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 2.4vh;
+	color: #333333;
+	display: block;
+  }
+  
+.dropDownElement:hover {
+	background-color: #f8f8f8;
+	border: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+  }
+  
+.closebtn {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	padding-right: 2vh;
+	height: 12vh;
+  }
+
+  .closebtn a{
+	font-size: 4vh;
+	float:right;
+	color: #333333;
+	text-decoration: none;
+
+  }
+
+@media only screen and (min-width: 640px) {
+
+	.navBar{
+		position: relative;
+		box-shadow: 0vw 0vw 2vw 0vw #00000010;
+	}
+
+	.logoBlock{
+		padding-left: 4vh;
+	}
+
+	
+	.navSlideMenu{
+
+		padding-right: 4vh;
+
+	}
+
+	.sideNav{
+		width: 0;
+	}
+
+	.closebtn{
+		padding-right: 4vh;
+	}
+}
+
+
+
+/************************MOBILE VIEW FIRST******************************/
+
+.containerBox{
+	margin-top: 13vh;
+	width: 100vw;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tableHeader{
+	width: 100%;
+	height: 8vh;
+	font-family: 'Montserrat', sans-serif;
+	border-bottom: 1.5px solid;
+	border-color: #EEE;
+}
+
+.placeHeader{
+	height: 100%;
+	float: left;
+	display: table;
+	padding-left: 2vh;
+	font-size: 2vh;
+}
+
+.placeHeader p{
+	display: table-cell;
+	vertical-align: middle;
+	color: #333333;
+}
+
+.rightHeaderBlock{
+	float: right;
+	display: flex;
+	flex-direction: row;
+	padding-right: 4vw;
+	height: 100%;
+}
+
+.rightHeaderBlock p{
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 1.8vh;
+	color: #333333;
+}
+
+select{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.8vh;
+	color: #333333;
+	width: 18vh;
+	height: 4vh;
+	border: solid #ddd;
+	border-width: 1px;
+	border-radius: 2vh;
+	padding: 0vh 0vh 0vh 1vh;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 1vh;
+    background: url('../../static/img/caretdown.png') no-repeat right #FFF;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background-position: calc(100% - 1vh);
+	background-size: 1.6vh 0.9vh;
+}
+
+.categoryElement{
+	width: 100%;
+	height: 10vh;
+	background-color: white;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #333333;
+	font-size: 3vw;
+	border-bottom: 1.5px solid;
+	border-color: #EEE;
+}
+
+.categoryElement:Hover{
+	background-color: #F8F8F8;
+}
+
+
+.labelsLeft{
+	float: left;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding-left: 2vh;
+}
+
+.nameLabel{
+	margin-top: auto;
+	font-size: 2.2vh;
+	margin-bottom: 1vh;
+	text-align: left;
+}
+
+.secondaryLabel{
+	font-size: 1.6vh;
+	text-align: left;
+	margin-bottom: auto;
+}
+
+.rightBlock{
+	float: right;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	padding-right: 2vw;
+}
+
+.distanceBlock{
+	float: left;
+	height: 100%;
+	width: 8vh;
+	display: flex;
+	flex-direction: column;
+	color: #666666;
+}
+
+.distanceLabel{
+	margin-top: auto;
+	font-size: 3.5vh;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.distanceLowerLabel{
+	font-size: 1.4vh;
+	margin-bottom: auto;
+}
+
+.borderline{
+	height: 80%;
+	width: 1px;
+	background-color: #DDD;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.congestionBlock{
+	float: right;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 8vh;
+}
+
+.congestionIcon{
+	margin-top: auto;
+	margin-bottom: 0.8vh;
+	height: 3.6vh;
+}
+
+.congestionLabel{
+	font-size: 1.4vh;
+	margin-top: 0vh;
+	margin-bottom: auto;
+
+}
+
+
+/************************DESKTOP VIEW******************************/
+@media only screen and (min-width: 640px) {
+
+	.containerBox{
+		margin-top: 6vh;
+		width: 74vw;
+		height: 76vh;
+		overflow-y: scroll;
+		border-radius: 0.5vw;
+		box-shadow: 0vw 0vw 1.5vw 0vw #00000010;
+	}
+	
+	.categoryElement{
+		height: 12vh;
+		font-size: 3vw;
+	}
+
+	
+
+	.labelsLeft{
+		padding-left: 5vh;
+	}
+	
+	.nameLabel{
+		font-size: 3vh;
+	}
+	
+	.secondaryLabel{
+		font-size: 2vh;
+	}
+
+	.congestionBlock{
+		width: 12vh;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	
+	.congestionIcon{
+		height: 4.8vh;
+	}
+	
+	.congestionLabel{
+		font-size: 2vh;
+	}
+	
+	.distanceBlock{
+		width: 12vh;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+	
+	.distanceLabel{
+		font-size: 4.5vh;
+	}
+	
+	.distanceLowerLabel{
+		font-size: 2vh;
+		margin-bottom: auto;
+	}
+
+	.tableHeader{
+		height: 8vh;
+	}
+	
+	.placeHeader{
+		padding-left: 5vh;
+		font-size: 2.4vh;
+	}
+	
+	.rightHeaderBlock{
+		padding-right: 2vw;
+	}
+
+	.rightHeaderBlock p{
+		margin-top: auto;
+		margin-bottom: auto;
+		font-size: 2vh;
+	}
+	
+	select{
+		font-size: 2vh;
+		width: 20vh;
+		height: 4vh;
+		border-width: 1.5px;
+		border-radius: 2vh;
+		padding: 0vh 0vh 0vh 1.6vh;
+		background-position: calc(100% - 1.6vh);
+		background-size: 1.6vh 0.9vh;
+	}
+}
+
+/************************SCROLL BAR******************************/
+.containerBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.containerBox::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.00);
+}
+
+.containerBox::-webkit-scrollbar-thumb {
+	background: #EEEEEE;
+	border-radius: 5px;
+}
+
+.containerBox::-webkit-scrollbar-thumb:hover {
+	background: #505050;
+}
+
+.containerBox::-webkit-scrollbar-corner {
+	background: rgba(0, 0, 0, 0.00);
+}

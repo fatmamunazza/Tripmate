@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html
+{% load i18n %}>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/publicPlaceList.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <title>{% trans "Select Category - TripMate" %}</title>
+    <link rel="icon" href="{% static 'img/tripmate-logo.png' %}" type="image/x-icon">
+
+</head>
+<body>
+     <div class="navBar">
+        <div class="logoBlock">
+            <img class="logoIcon" src="static/img/tripmate-logo.png">
+            <p class="tripmateName">{% trans "TripMate" %}</p>
+        </div>
+        <div class="sidenav">
+            <div class="closebtn"><a href="javascript:void(0)" onclick="closeNav()">&#10005;</a></div>
+            <a href="form.html" class="dropDownElement">Location Menu</a>
+            <a href="#" class="dropDownElement">About</a>
+            <a href="#" class="dropDownElement">FAQs</a>
+            <a href="#" class="dropDownElement">Contact Us</a>
+        </div>
+        <div class="navSlideMenu" onclick="openNav()">
+            <p>&#9776;</p>
+        </div>
+    </div>
+
+    <div class = "flex-container containerBox">
+        <!--<div class = "categoryBox">
+            <img class = "categoryIcon" src="../../static/img/park256.png">
+            <p class = "categoryLabel">PARK</p>
+        </div>-->
+    </div>
+<script type="text/javascript" src="./static/js/publicPlaceList.js"></script>
+
+<script>
+    var categories = [
+        {label:'PARK',iconLink:'static/img/park256.png'},
+        {label:'MUSEUM',iconLink:'static/img/museum256.png'},
+        {label:'MONUMENT',iconLink:'static/img/monument256.png'},
+        {label:'WORSHIP',iconLink:'static/img/worship256.png'},
+        {label:'LAKE',iconLink:'static/img/lake256.png'},
+        {label:'LIBRARY',iconLink:'static/img/library256.png'},
+        {label:'AMUSEMENT PARK',iconLink:'static/img/park256.png'},
+        {label:'HOTEL',iconLink:'static/img/museum256.png'},
+        {label:'ZOO',iconLink:'static/img/park256.png'},
+    ];
+
+    var CityId="{{ city }}";
+
+    var htmlcontent;
+    for (var j = 0; j < categories.length ; j++){
+        var htmlcontent = '<div class = "categoryBox"><img class = "categoryIcon" src="'+categories[j].iconLink+'"><p class = "categoryLabel">'+categories[j].label+'</p></div>';
+        document.querySelector('.containerBox').insertAdjacentHTML('beforeend',htmlcontent);
+    }
+
+    var categoryBoxes = Array.from(document.querySelectorAll('.categoryBox'));
+    var selectedLabel;
+
+    // GET THE SELECTED CATEGORY
+    categoryBoxes.forEach(function(current,index){
+        current.addEventListener('click',function(){
+            selectedLabel =current.children[1].innerHTML;
+            console.log(selectedLabel);
+
+            //SEND THE SELECTED CATEGORY TO NEXT PAGE (LINK THE NEXT PAGE USING DJANGO!!!)
+             window.location = 'selectedList/'+ selectedLabel + '/' + CityId;
+
+        });
+    });
+
+
+</script>
+</body>
+</html>

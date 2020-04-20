@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detailsPage.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <title>{% trans "Details Page - TripMate" %}</title>
+    <link rel = "icon" href =  "{% static 'img/tripmate-logo.png' %}" type = "image/x-icon">
+</head>
+
+<body>
+    <div class="navBar">
+        <div class="logoBlock">
+            <img class="logoIcon" src="{% static 'img/tripmate-logo.png' %}">
+            <p class="tripmateName">{% trans "TripMate" %}</p>
+        </div>
+        <div class="sidenav">
+            <div class="closebtn"><a href="javascript:void(0)" onclick="closeNav()">&#10005;</a></div>
+            <a href="form.html" class="dropDownElement">Location Menu</a>
+            <a href="#" class="dropDownElement">About</a>
+            <a href="#" class="dropDownElement">FAQs</a>
+            <a href="#" class="dropDownElement">Contact Us</a>
+        </div>
+        <div class="navSlideMenu" onclick="openNav()">
+            <p>&#9776;</p>
+        </div>
+    </div>
+    {% if details == None %}
+       <h1>Description is not available yet<h1>
+    {% else %}
+        <div class="flex-container containerBox">
+        <div class="tableHeader">
+            <div class="placeHeader">
+                <p class="headLabel">
+                    <!-- Location name -->
+                    {{ details.placeName }}
+                </p>
+                <p class="addressLabel">
+                    <!-- Location address -->
+                    {{ details.address }}
+                </p>
+                </p>
+                <p class="openCloseInfo"><b>
+                        <!-- open/closed -->
+                </b></p>
+            </div>
+            <div class="rightHeaderBlock">
+                <button class="viewMap">VIEW IN MAP</button>
+            </div>
+        </div>
+
+        <div class="categoryElement categoryTime">
+            <div class="timeBlock">
+                <p class="timeBlockText">OPENING TIME</p>
+                <p class="opentime">
+                    <!-- opening time -->
+                    {{ details.opentime }}
+                </p>
+            </div>
+            <div class="borderline"></div>
+            <div class="timeBlock">
+                <p class="timeBlockText">CLOSING TIME</p>
+                <p class="closetime">
+                    {{ details.closedtime }}
+                    <!-- closing time -->
+                </p>
+            </div>
+
+        </div>
+
+        <div class="categoryDescription">
+            <p class="descriptionLabel">Description</p>
+            <p class="descriptionText">
+                {{ details.description }}
+                <!-- description text -->
+            </p>
+        </div>
+
+        <div class="categoryElement ">
+            <div class="labelLeft">
+                <p class="nameLabel">Congestion Level</p>
+            </div>
+            <div class="rightBlock">
+                <div class="borderline"></div>
+                <div class="secondBlock">
+                      {% if details.congestion == 'closed' %}
+                           <img class="icon congestionIcon" src="{% static 'img/closed.png' %}">
+                      {% endif %}
+                       {% if details.congestion == 'low' %}
+                           <img class="icon congestionIcon" src="{% static 'img/free.png' %}">
+                      {% endif %}
+                       {% if details.congestion == 'moderate' %}
+                           <img class="icon congestionIcon" src="{% static 'img/moderate.png' %}">
+                      {% endif %}
+                       {% if details.congestion == 'high' %}
+                           <img class="icon congestionIcon" src="{% static 'img/crowded.png' %}">
+                      {% endif %}
+                       {% if details.congestion == 'very high' %}
+                           <img class="icon congestionIcon" src="{% static 'img/overcrowded.png' %}">
+                      {% endif %}
+                    <p class="iconLabel congestionLabel">
+                        <!-- congestion level -->
+                        {{ details.congestion }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoryElement">
+            <div class="labelLeft">
+                <p class="nameLabel">Rating</p>
+            </div>
+            <div class="rightBlock">
+                <div class="firstBlock">
+                    <p class="firstBlockLabel starRating">
+                        <!-- location rating -->
+                        {{ details.rating }}
+                    </p>
+                    <p class="firstBlockLowerLabel">star</p>
+                </div>
+                <div class="borderline"></div>
+                <div class="secondBlock">
+                    <img class="icon" src="{% static 'img/star.png' %}">
+                </div>
+            </div>
+        </div>
+
+        <div class="categoryElement">
+            <div class="labelLeft">
+                <p class="nameLabel">Distance</p>
+            </div>
+            <div class="rightBlock">
+                <div class="firstBlock">
+                    <p class="firstBlockLabel distanceLabel">
+                        <!-- distance -->
+                        {{ details.distance }}
+                    </p>
+                    <p class="firstBlockLowerLabel">km away</p>
+                </div>
+                <div class="borderline"></div>
+                <div class="secondBlock">
+                    <img class="icon" src="{% static 'img/location.png' %}">
+                </div>
+            </div>
+        </div>
+
+        <div class="categoryElement">
+            <div class="labelLeft">
+                <p class="nameLabel">Safety Score</p>
+            </div>
+            <div class="rightBlock">
+                <div class="firstBlock">
+                    <p class="firstBlockLabel safetyscore">
+                        <!-- safety -->
+                        {{ details.score }}
+                    </p>
+                    <p class="firstBlockLowerLabel">out of 5</p>
+                </div>
+                <div class="borderline"></div>
+                <div class="secondBlock">
+
+                     {% if details.score == 1 %}
+                           <img class="icon safetyIcon" src="{% static 'img/safety1.png' %}">
+                      {% endif %}
+                       {% if details.score == 2 %}
+                           <img class="icon safetyIcon" src="{% static 'img/safety2.png' %}">
+                      {% endif %}
+                       {% if details.score == 3 %}
+                           <img class="icon safetyIcon" src="{% static 'img/safety3.png' %}">
+                      {% endif %}
+                       {% if details.score == 4 %}
+                           <img class="icon safetyIcon" src="{% static 'img/safety4.png' %}">
+                      {% endif %}
+                       {% if details.score == 5 %}
+                           <img class="icon safetyIcon" src="{% static 'img/safety5.png' %}">
+                      {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="categoryElement categoryDirection">
+            <div class="labelLeft">
+                <p class="nameLabel">Get directions to location</p>
+            </div>
+
+            <button class="goButton">GO</button>
+
+        </div>
+
+        <div class="categoryElement categoryHourwise">
+            <div class="labelLeft">
+                <p class="nameLabel">View congestion details</p>
+            </div>
+
+            <button class="goButton">GO</button>
+
+        </div>
+    </div>
+    {% endif %}
+   <script type="text/javascript" src="{% static 'js/detailsPage.js' %}"></script>
+
+</body>
+
+</html>
